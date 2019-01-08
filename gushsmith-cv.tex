@@ -1,0 +1,200 @@
+\documentclass[letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{changepage} % for adjustwidth
+\usepackage{bibentry} % for publications
+
+\usepackage{geometry}
+\geometry{
+	letterpaper,
+	left=15mm,
+	top=1in,
+}
+
+% Parameters
+\newcommand{\primaryindent}{1.5cm} % the primary level of indentation that most everything is indented to
+\setlength{\parindent}{0cm} % first-line indent for paragraphs
+
+% Redefine section style
+\usepackage{sectsty}
+\sectionfont{
+	\normalfont\sffamily\large
+	\sectionrule{11pt}{1pt}{0pt}{0pt}}
+
+
+\newcommand{\resumesubsection}[1]{
+	\vspace{1.5ex}
+	\noindent \large \textsf{{#1}}\par
+	\vspace{.5ex}
+	\normalsize
+}
+
+\newcommand{\name}[1]{ 
+	\Huge  \textsf{\textbf{#1}}
+	\vspace{0.1em}
+	\par \normalsize \normalfont}
+
+\newcommand{\personalinfo}[1]{
+	\large  #1 
+	\par \normalsize \normalfont}
+
+% this environment indents to \primaryindent.
+\newenvironment{indented}{\begin{adjustwidth}{\primaryindent}{0em}}{\end{adjustwidth}}
+
+% this environment is used to generate lists in this resume.
+\newenvironment{resumelist}{\begin{itemize}[topsep=0pt,noitemsep,itemindent=-15pt,leftmargin=30pt]}{\end{itemize}}
+
+\newcommand{\generalentry}[5]{
+	\begin{indented}
+		\Large \textsf{\textbf{#1}} \hfill	% Study
+			\hfill\normalsize\textit{#2} \par  			% Location
+		\noindent \large \textsf{\textbf{\textit{#3}}} 	% Subtitle
+			\hfill \normalsize #4\par 					% Time
+		\normalsize \normalfont #5 \par					% Rest of content
+		\normalsize \normalfont
+	\end{indented}
+	}
+
+\begin{document}
+	
+\pagenumbering{gobble} % no page numbering
+	
+\begin{center}
+	\name{Gus Henry Smith}
+	\personalinfo{140 E College Ave Apt 3, State College, PA, 16801}
+	\personalinfo{\url{http://justg.us} -- (570)817-9340 -- \href{mailto:hfs5022@psu.edu}{hfs5022@psu.edu}}
+\end{center}
+
+\section*{Education}
+\generalentry{The Pennsylvania State University}{University Park, PA}{The Schreyer Honors College}{GPA: 3.99}{
+	% TODO handle margin in educationentry command
+	% TODO handle topsep there too
+	\begin{resumelist}
+		\item M.S.\ in Computer Science and Engineering (graduating May 2018)
+		\item B.S.\ in Computer Engineering, Math minor
+		\item Advisors: Vijaykrishnan Narayanan and John Sampson
+	\end{resumelist}
+}
+
+\section*{Objectives}
+\begin{indented}
+\begin{resumelist}
+	\item Contribute valuable research in the field of Computer Architecture; investigate non-traditional architectures built on emerging technologies through concrete, cross-disciplinary projects 
+	\item Gain significant teaching experience
+\end{resumelist}
+\end{indented}
+
+\section*{Research Experience}
+
+\generalentry{Microsystems Design Lab at Penn State}{University Park, PA}{Researcher}{May 2014--present}{		
+	
+	\resumesubsection{NSF/SRC E2CDA Center: \textit{Extremely Energy Efficient Collective Electronics}}
+	\begin{resumelist}
+		\item Accelerate computer vision algorithms using analog computational abilities of emerging devices
+		\item Model and evaluate processing in memory architectures in gem5 and McPAT
+		\item\textbf{Co-authored publication:} A FerroFET Based In-Memory Processor for Solving Distributed and Iterative Optimization via Least-Squares Method \cite{ferrofet}
+	\end{resumelist}
+	
+	\resumesubsection{NSF Expedition in Computing: \textit{Visual Cortex on Silicon}}
+	
+	Organizational co-lead of the 15-person Grocery Automation System group
+	\begin{resumelist}
+		\item Orchestrate the creation of a system to assist the visually impaired in grocery shopping, combining a number of lab projects
+		\item Organize weekly meetings and larger demos
+		\item\textbf{Co-authored publication:} Third Eye: A Shopping Assistant for the Visually Impaired \cite{7842859}
+	\end{resumelist}
+	
+	\vspace{1mm}
+	
+	Technical team lead of the 5-person Haptic Glove project (2014--2017)
+	\begin{resumelist}
+		\item Designed a haptic feedback glove which guides a user's hand towards an object utilizing computer vision library OpenCV to track objects and extrapolate the hand's position
+		\item Planned, printed, and soldered custom PCBs for the glove	
+		\item Presented a central demo annually at NSF Expedition review
+		\item Recruited, trained, and organized a team of undergraduates
+	\end{resumelist}
+
+
+}
+
+%\vspace{3mm}
+
+\section*{Engineering Experience}
+\generalentry{Google}{San Francisco, CA}{Software Engineering Intern on Fuchsia}{May--August 2018 (accepted offer)}{
+	\begin{resumelist}
+		\item Will gain firsthand operating system design experience on Fuchsia (a new OS developed at Google)
+
+	\end{resumelist}
+}
+\vspace{3mm} % TODO is there a better way to do this?
+
+\generalentry{Google}{Seattle, WA}{Software Engineering Intern on Chrome}{May--August 2017}{
+	\begin{resumelist}
+		\item Gained C++ and general software engineering proficiency
+	\end{resumelist}
+}
+\vspace{3mm}
+\generalentry{Automated Ceiling Tile Measurement Tool}{University Park, PA}{Team Lead, Penn State Engineering Capstone}{January--May 2017}{
+	\begin{resumelist}
+		\item Led a team in designing a quick and accurate app for measuring and cutting ceiling tiles
+		\item Won third place overall best project at semesterly Capstone Design Showcase Awards 
+	\end{resumelist}
+}
+
+\vspace{3mm}
+
+
+\generalentry{Google}{Mountain View, CA}{Software Engineering Intern, Android Internal Tools}{May--August 2016}{
+	\begin{resumelist}
+		\item Committed code into the closed- and open-source Android trees, reaching a wide audience of both internal and external developers
+	\end{resumelist}
+}
+
+\vspace{2mm}
+\begin{indented}
+	\large \textsf{\textbf{Technical Skills}}
+	\normalsize \normalfont \par
+	\begin{resumelist}
+		\item \textbf{Languages:} C++, Python, C, Java, Verilog, SystemVerilog, MATLAB
+		\item \textbf{Software:} gem5, McPAT, OpenCV
+		\item \textbf{Platforms:} Linux, Xilinx 7 series FPGAs 
+	\end{resumelist}
+\end{indented}
+
+\section*{Teaching Experience}
+
+\generalentry{CMPEN 417: FPGA Design}{Penn State CSE Department}{Teaching Assistant}{Spring 2017}{
+	\begin{resumelist}
+		\item Created from scratch a number of course projects for the Zedboard, utilizing the board's Xilinx 7-series FPGA and ARM processor; lectured on each project
+		\item Mentored and taught students one-on-one in weekly office hours
+		\item Assisted in the creation and grading of all course exams and projects
+	\end{resumelist}
+}
+
+\vspace{3mm}
+
+\generalentry{CMPEN 475: Functional Verification}{Penn State CSE Department}{Teaching Assistant}{Fall 2016}{
+	\begin{resumelist}
+		\item As above: created new projects and lectures, held weekly office hours, graded exams and projects
+	\end{resumelist}
+}
+
+\section*{Honors and Accolades}
+\begin{indented}
+	\begin{resumelist}
+	\item CSE Department Grad Teaching Assistant Award for Fall 2016/Spring 2017
+	\item Second place, IEEE Computer Society Global Student Challenge 2017, for submission ``Computer Vision for Good''	
+	\item Third place overall best project, Penn State College of Engineering Capstone Design Showcase Awards 2017, for project ``Automated Ceiling Tile Measurement Tool''
+	\item Evan Pugh Junior Award: given to juniors in top 0.5\% of class
+	\end{resumelist}
+\end{indented}
+
+\nocite{*}
+\bibliographystyle{plain}
+\renewcommand{\refname}{Publications}
+\bibliography{bibliography}
+
+\end{document}
